@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" xmlns:th="http://www.thymeleaf.org"> <!--ThymeleafをHTMLファイルで使用する為-->
+<title>egap xedni</title>
+</head>
+<body>
+	<h1>ここはインデックスページです</h1>
+	<a href="calc">calcへリンクします</a>
+</body>
+</html>

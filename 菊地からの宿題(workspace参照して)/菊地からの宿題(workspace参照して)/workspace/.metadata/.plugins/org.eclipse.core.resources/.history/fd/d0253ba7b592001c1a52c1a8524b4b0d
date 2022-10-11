@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" xmlns:th="http://www.thymeleaf.org"><!--ThymeleafをHTMLファイルで使用する為-->
+<title>web足し算</title>
+</head>
+<body>
+	<p>数値を入力してください！</p>
+	<form method="POST" action="res">
+		<input type="text" inputmode=decimal name="numA"  value=0> <!--数字を打つところ-->
+		<b>＋</b> <!--太文字にしたいからbタグ-->
+		<input type="text" inputmode=decimal name="numB"  value=0> <!--数字を打つところ-->
+
+		<input type=submit value="送信">  <!--送信ボタン-->
+	</form>
+	
+	<form method="POST" action="res">
+		<input type="text" inputmode=decimal name="numC"  value=0> <!--数字を打つところ-->
+		<b>＋</b> <!--太文字にしたいからbタグ-->
+		<input type="text" inputmode=decimal name="numD"  value=0> <!--数字を打つところ-->
+
+		<input type=submit value="送信">  <!--送信ボタン-->
+	</form>
+</body>
+</html>

@@ -1,0 +1,31 @@
+package com.example.demo.controllers;//パッケージ名
+
+import org.springframework.beans.factory.annotation.Autowired;//@Autowiredを使えるようにするため
+import org.springframework.stereotype.Controller;//@Controllerを使えるようにするため
+import org.springframework.ui.Model;//
+import org.springframework.web.bind.annotation.PostMapping;//@PostMappingを使えるようにするため
+import org.springframework.web.bind.annotation.RequestParam;//@RequestParamを使えるようにするため
+
+import com.example.demo.services.CalcService;//CalcServiceの説明
+
+@Controller  //コントローラクラスが自動で読み込まれる。
+//@RequestMapping("res")
+public class CalcController {
+
+
+
+	@Autowired //依存性の注入    //CalcServiceのインスタンスがserviceフィールドに設定される
+	//変数に自動でセットしてもらうため
+	 private CalcService service;
+
+	@PostMapping("res") //HTMLファイルから、POSTリクエストを発行してコントローラーで@RequestParamを取得。
+	public String calc(
+			Model model,
+			@RequestParam("numA")String NumA,   //("numA")の中にNumA,がある
+			@RequestParam("numB")String NumB   //("numB")の中にNumBがある
+			) {
+
+		model.addAttribute("kotae", service.calculate(NumA,NumB));
+		return "res";
+	}
+}

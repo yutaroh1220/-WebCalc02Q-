@@ -1,0 +1,19 @@
+package com.example.demo.services;
+
+import java.math.BigDecimal;//BigDecimalは誤差が出ないように正確に計算するため
+
+import org.springframework.stereotype.Component;//@Componentを使用するため
+@Component
+public class CalcService {
+
+	public String calculate(
+			String NumA,
+			String NumB
+	   ) {
+			BigDecimal AdA = new BigDecimal(NumA);
+			BigDecimal AdB = new BigDecimal(NumB);
+			BigDecimal AdR = AdA.add(AdB);
+			String AdResult = AdR.toString();
+	   return AdResult;
+	}
+}

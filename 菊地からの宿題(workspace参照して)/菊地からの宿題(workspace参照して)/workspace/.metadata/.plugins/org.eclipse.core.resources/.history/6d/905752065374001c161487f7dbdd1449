@@ -1,0 +1,34 @@
+package com.example.demo.controllers;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+
+import com.example.demo.services.CalcService;
+import com.example.demo.services.ResultLogTableService;
+
+@Controller
+public class CalcController {
+
+	@Autowired
+	ResultLogTableService logService;
+
+	@Autowired //依存性の注入
+	 private CalcService service;
+
+	@PostMapping("res")
+	public String calc(
+			Model model,
+			@RequestParam("numA")String NumA,
+			@RequestParam("numB")String NumB
+			) {
+
+		String ResAB = service.calculate(NumA,NumB);
+		model.addAttribute("kotae", ResAB);
+		logService.insertLog(ResAB);
+
+		return "res";
+	}
+}

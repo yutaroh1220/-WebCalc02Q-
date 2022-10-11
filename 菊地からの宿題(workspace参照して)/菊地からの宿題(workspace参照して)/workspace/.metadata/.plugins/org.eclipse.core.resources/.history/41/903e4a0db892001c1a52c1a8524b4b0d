@@ -1,0 +1,21 @@
+package com.example.demo.services;
+
+import java.math.BigDecimal;//BigDecimalは誤差が出ないように正確に計算するため
+
+import org.springframework.stereotype.Component;//@Componentを使用するため
+@Component
+public class CalcService {//@Componentの中身
+
+	public String calculate(
+			String NumA,
+			String NumB
+	   ) 
+	
+	{
+			BigDecimal AdA = new BigDecimal(NumA);//AdAに計算をするための値をnew BigDecimal(〇〇)と入力
+			BigDecimal AdB = new BigDecimal(NumB);//AdBに計算をするための値をnew BigDecimal(〇〇)と入力
+			BigDecimal AdR = AdA.add(AdB);  //BigDecimal 〇〇= 〇〇.add(〇〇); これは足し算を書くとき
+			String AdResult = AdR.toString();//toStringはクラスで定義されている文字列表現を返すメソッド
+	   return AdResult;  // 戻り値  結果を返す
+	}
+}

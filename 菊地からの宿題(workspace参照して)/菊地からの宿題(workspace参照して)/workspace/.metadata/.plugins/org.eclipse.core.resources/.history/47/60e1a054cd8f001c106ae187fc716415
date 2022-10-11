@@ -1,0 +1,46 @@
+package com.example.demo.services;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+import com.example.demo.entities.ResultLog;
+import com.example.demo.repositories.ResultLogTableReppsitory;
+
+
+/*実装したい処理
+ *
+ * ・データべースの中身全てをindexにReturnする処理
+ * ・CalcServiceがReturnしたAdResultを元に、新しいResultLogの実体を作成し、idを自動でジェネレート
+ *
+ */
+
+@Service
+@Transactional
+public class ResultLogTableService {
+
+	//ResultLogRepositoryインタフェースのインスタンスlogRepositoryを作成(!?)
+	@Autowired  //依存性の注入(@Compiledが受け)
+	ResultLogTableReppsitory logRepository;
+
+	public List<ResultLog> getEntity() {
+        return logRepository.selectAll();  //
+    }
+
+	//INSERTクエリの代わりにメソッドを作成
+	public String insertLog(String res) {
+		/*
+		 * 以下にDB追加処理を実装していくぅ！
+		 */
+		
+		//ResultLogエンティティの実体nを作成
+		ResultLog n = new ResultLog();
+		n.setResult_data(res);
+		
+		//ResultLogTableReppsitoryが継承した便利なメソッドでnをDBにINSERT
+		logRepository.save(n);
+		return "succses!!";
+	}
+}

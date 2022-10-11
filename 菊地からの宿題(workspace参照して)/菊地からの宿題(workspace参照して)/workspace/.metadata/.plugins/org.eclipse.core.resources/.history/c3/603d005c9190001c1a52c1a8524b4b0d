@@ -1,0 +1,22 @@
+//package com.example.demo.controllers;
+//
+//import org.springframework.stereotype.Controller;//@Controllerを使えるようにするため
+//import org.springframework.web.bind.annotation.RequestMapping;//@RequestMappingを使えるようにするため
+//
+//@Controller
+////Spring MVCでコントローラー層のクラスに付与する。
+////Controller は、主に以下の役割を担う。
+////・画面遷移の制御
+////・ドメイン層の Service の呼出 (主処理を実行する)
+//
+//public class IndexController {
+//	@RequestMapping() //index.htmlに対して、どのメソッドが処理を実行するか定義するアノテーション
+//	public String index() {
+//		return "index";  
+//	}
+//
+//	@RequestMapping("calc") //calc.htmlに対して、どのメソッドが処理を実行するか定義するアノテーション
+//	public String calc() {
+//		return "calc";
+//	}
+//}

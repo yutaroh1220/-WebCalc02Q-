@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"> <!--ThymeleafをHTMLファイルで使用する為-->
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<p>計算結果や！下の戻るから戻れるで！</p>
+		<!-- 足し算表示欄 -->
+		<b th:text="${kotae}" class="adresult,b3Result">0</b> <!--kotaeという変数を定義-->
+		<!--class="adresult">0についてはいらない-->
+		<p></p>
+</body>
+</html>
